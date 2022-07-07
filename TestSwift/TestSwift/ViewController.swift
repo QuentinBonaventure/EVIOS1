@@ -105,9 +105,8 @@ class ViewController: UIViewController {
            
             
             DispatchQueue.main.async {
-                self.showAlert()
-                
                 self.downloadIndicator.isHidden = true
+                self.showAlert()
                 self.downloadIndicator.stopAnimating()
             }
             
