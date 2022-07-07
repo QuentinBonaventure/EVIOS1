@@ -38,7 +38,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-uw-sUX">
                                         <rect key="frame" x="0.0" y="33.5" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="nickname"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Fvo-JI-Q3D">
                                         <rect key="frame" x="0.0" y="80.5" width="374" height="89.5"/>
@@ -82,6 +82,10 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="29"/>
                                     <color key="baseBackgroundColor" red="0.1260271966" green="0.2236213386" blue="0.21174278860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveUser" destination="BYZ-38-t0r" eventType="touchUpInside" id="gtL-a1-not"/>
+                                    <action selector="verifyField" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcn-aQ-ENH"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PQJ-PW-6jf">
                                 <rect key="frame" x="184" y="480" width="49" height="30"/>
@@ -90,6 +94,14 @@
                                     <constraint firstAttribute="width" constant="47" id="hGo-OB-L8l"/>
                                 </constraints>
                             </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="8xY-Fy-Pbl">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Y4-ar-coY"/>
+                                    <constraint firstAttribute="width" constant="40" id="QCn-3g-RYr"/>
+                                </constraints>
+                                <color key="color" systemColor="systemOrangeColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,7 +114,9 @@
                             <constraint firstItem="dSV-pO-R7n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="POJ-fj-Nl5"/>
                             <constraint firstItem="dSV-pO-R7n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="Py3-XZ-GZG"/>
                             <constraint firstItem="PQJ-PW-6jf" firstAttribute="top" secondItem="1Lu-s7-j3V" secondAttribute="bottom" constant="10" id="R4p-9a-OXW"/>
+                            <constraint firstItem="8xY-Fy-Pbl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T0J-xs-z0s"/>
                             <constraint firstItem="BV5-fK-dYU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TQq-g3-PXq"/>
+                            <constraint firstItem="8xY-Fy-Pbl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W6R-Hf-4xe"/>
                             <constraint firstItem="BV5-fK-dYU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g2P-vh-bdl"/>
                             <constraint firstItem="FWx-7P-Mwl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i5x-5N-K11"/>
                             <constraint firstItem="jQW-yl-XKB" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="j3t-VJ-yu6"/>
@@ -114,8 +128,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="downloadIndicator" destination="8xY-Fy-Pbl" id="xHk-lm-yeC"/>
+                        <outlet property="loginField" destination="cvl-uw-sUX" id="dlf-ZK-XGD"/>
                         <outlet property="passwordField" destination="t4t-b7-4Vp" id="LoU-cA-XAM"/>
                         <outlet property="passwordImage" destination="1OA-Io-eNk" id="PVF-kw-dGw"/>
+                        <outlet property="switchButton" destination="PQJ-PW-6jf" id="zRJ-Nc-S6g"/>
                         <outlet property="userImage" destination="dSV-pO-R7n" id="i7T-F9-tv1"/>
                     </connections>
                 </viewController>
@@ -130,6 +147,9 @@
         <image name="user_icon" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
