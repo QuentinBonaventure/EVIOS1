@@ -48,7 +48,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_on_icon" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-Io-eNk">
+                                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye_on_icon" translatesAutoresizingMaskIntoConstraints="NO" id="1OA-Io-eNk">
                                                 <rect key="frame" x="344" y="0.0" width="30" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="NJT-p9-4S0"/>
@@ -83,7 +83,7 @@
                                     <color key="baseBackgroundColor" red="0.1260271966" green="0.2236213386" blue="0.21174278860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQJ-PW-6jf">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PQJ-PW-6jf">
                                 <rect key="frame" x="184" y="480" width="49" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="I5T-8q-AbA"/>
@@ -114,6 +114,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordField" destination="t4t-b7-4Vp" id="LoU-cA-XAM"/>
+                        <outlet property="passwordImage" destination="1OA-Io-eNk" id="PVF-kw-dGw"/>
                         <outlet property="userImage" destination="dSV-pO-R7n" id="i7T-F9-tv1"/>
                     </connections>
                 </viewController>
